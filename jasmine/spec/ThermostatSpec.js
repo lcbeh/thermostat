@@ -10,8 +10,12 @@ describe("Thermostat", function() {
     it('is 20 degrees', function() {
       expect(thermostat.temperature).toBe(20);
     });
-
   });
 
+  describe('Changing Temperature', function() {
+    it('can increase the temperature', function() {
+      expect(thermostat.increase).not.toBeUndefined();
+    });
+  });
 
 });
