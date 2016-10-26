@@ -37,4 +37,10 @@ Thermostat.prototype.displayColor = function () {
   if (this.temperature < 18) {
     return this.displayColors[0]
   };
+  if (this.temperature < 25 && this.temperature > 17) {
+    return this.displayColors[1]
+  };
+  if (this.temperature > 24) {
+    return this.displayColors[2]
+  };
 };

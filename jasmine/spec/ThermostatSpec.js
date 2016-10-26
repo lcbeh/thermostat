@@ -4,14 +4,14 @@ describe("Thermostat", function() {
 
   beforeEach(function() {
    thermostat = new Thermostat();
- });
+  });
 
   describe('Default Temperature', function() {
     it('is 20 degrees', function() {
       expect(thermostat.temperature).toBe(20);
     });
     it('and display color is Yellow', function() {
-      expect(thermostat.displayColor).toBe('Yellow');
+      expect(thermostat.displayColor()).toBe('Yellow');
     });
   });
 
@@ -60,10 +60,20 @@ describe("Thermostat", function() {
   });
 
   describe('Display color for energy usage', function() {
-    it('is green when temperature is less than 18', function() {
+    it('is Green when temperature is less than 18', function() {
     for(var i=1; i<4; i++) {thermostat.decrease();}
     expect(thermostat.displayColor()).toBe('Green')
     });
-
+    it('is Yellow when temperature is less than 25', function() {
+      thermostat.reset
+    for(var i=1; i<3; i++) {thermostat.increase();}
+    expect(thermostat.displayColor()).toBe('Yellow')
+    });
+    it('is Red when temperature is greater than 24', function() {
+    thermostat.reset
+    thermostat.setPowerSaver(false)
+    for(var i=1; i<9; i++) {thermostat.increase();}
+    expect(thermostat.displayColor()).toBe('Red')
+    });
   });
 });
