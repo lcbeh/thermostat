@@ -27,6 +27,7 @@ describe("Thermostat", function() {
   describe('Minimum temperature', function() {
     it('is 10', function() {
       for(var i=1; i<11; i++) {thermostat.decrease();}
+      console.log(thermostat.temperature)
       expect( function() {thermostat.decrease(); } ).toThrow('Minimum temperature of 10 has been reached');
     });
 
