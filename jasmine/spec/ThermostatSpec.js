@@ -30,7 +30,13 @@ describe("Thermostat", function() {
       console.log(thermostat.temperature)
       expect( function() {thermostat.decrease(); } ).toThrow('Minimum temperature of 10 has been reached');
     });
+  });
 
+  describe('Power Saving mode', function() {
+    it('if on, maximum temperature is 25', function() {
+      for(var i=1; i<6; i++) {thermostat.increase();}
+      expect( function() {thermostat.increase(); } ).toThrow('Power Saver mode is on, temperature cannot be more than 25');
+    });
   });
 
 
