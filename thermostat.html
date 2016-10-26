@@ -3,21 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Thermostat</title>
-    <script src="jasmine/src/Thermostat.js"></script>
   </head>
 
   <body>
     <h1>Thermostat</h1>
-    <h3 id="temperature"></h3>
+    <h3> The temperature is: </h3> <h2 id="temperature"></h2>
+    <script src="jquery.js"></script>
       <p>
+        <script>
+
+        window.onload = function() {
+          alert( "This the Thermostat page" );
+        };
+
+        </script>
+
         <button id="increase_temperature">Increase Temperature</button><br>
         <button id="decrease_temperature">Decrease Temperature</button><br>
         <button id="reset">Reset Temperature</button><br><br>
         Power saving mode is <span id="power_saving_status">ON</span><br>
         <button id="power_saver_on">Set Power Saver ON</button>
         <button id="power_saver_off">Set Power Saver OFF</button>
+
+
       </p>
-
-
+    <script src="interface.js"></script>
+    <script src="jasmine/src/Thermostat.js"></script>
   </body>
 </html>
