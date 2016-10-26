@@ -23,3 +23,7 @@ Thermostat.prototype.decrease = function () {
   };
   this.temperature--;
 };
+
+Thermostat.prototype.setPowerSaver = function(bool) {
+  this.powerSaver = bool;
+};
