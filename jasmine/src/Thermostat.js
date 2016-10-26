@@ -11,6 +11,9 @@ Thermostat.prototype.increase = function () {
   if (this.powerSaver == true && this.temperature == 25) {
       throw 'Power Saver mode is on, temperature cannot be more than 25'
   };
+  if (this.powerSaver == false && this.temperature == 32) {
+      throw 'Power Saver mode is off, temperature cannot be more than 32'
+  };
   this.temperature++;
 };
 

@@ -38,9 +38,12 @@ describe("Thermostat", function() {
       expect( function() {thermostat.increase(); } ).toThrow('Power Saver mode is on, temperature cannot be more than 25');
     });
 
-
+    it('if off, maximum temperature is 32' , function() {
+      spyOn(thermostat, 'powerSaver()').and.returnValue(false);
+      for(var i=1; i<13; i++) {thermostat.increase();}
+      expect( function() {thermostat.increase(); } ).toThrow('Power Saver mode is off, temperature cannot be more than 32');
+    });
   });
-
 
 
 });
