@@ -42,7 +42,10 @@ describe("Thermostat", function() {
       for(var i=1; i<13; i++) {thermostat.increase();}
       expect( function() {thermostat.increase(); } ).toThrow('Power Saver mode is off, temperature cannot be more than 32');
     });
+
+    it('is on by default', function() {
+      expect(thermostat.powerSaver).toBe(true);
+    });
+
   });
-
-
 });
