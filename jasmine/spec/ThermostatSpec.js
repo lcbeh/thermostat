@@ -46,6 +46,15 @@ describe("Thermostat", function() {
     it('is on by default', function() {
       expect(thermostat.powerSaver).toBe(true);
     });
-
   });
+
+  describe('Reset button', function() {
+    it('resets temperature to 20', function() {
+    for(var i=1; i<4; i++) {thermostat.increase();}
+    expect(thermostat.temperature).toBe(23)
+    thermostat.reset()
+    expect(thermostat.temperature).toBe(20)
+    });
+  });
+
 });
