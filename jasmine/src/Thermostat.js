@@ -5,7 +5,7 @@ function Thermostat() {
   this.MINIMUM_TEMPERATURE = 10
   this.temperature = this.DEFAULT_TEMPERATURE
   this.powerSaver = true
-  this.displayColor = 'Yellow'
+  this.displayColors = ['Green','Yellow','Red']
 };
 
 Thermostat.prototype.increase = function () {
@@ -33,9 +33,8 @@ Thermostat.prototype.reset = function () {
   this.temperature = this.DEFAULT_TEMPERATURE;
 };
 
-// Thermostat.prototype.displayColor = function() {
-//   if (this.temperature < 18) {
-//
-//   };
-//
-// };
+Thermostat.prototype.displayColor = function () {
+  if (this.temperature < 18) {
+    return this.displayColors[0]
+  };
+};
