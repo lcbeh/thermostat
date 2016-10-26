@@ -14,7 +14,8 @@ describe("Thermostat", function() {
 
   describe('Changing Temperature', function() {
     it('can increase the temperature', function() {
-      expect(thermostat.increase).not.toBeUndefined();
+      thermostat.increase();
+      expect(thermostat.temperature).toBe(21);
     });
   });
 
