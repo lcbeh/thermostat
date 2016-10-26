@@ -55,4 +55,12 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toBe(20)
     });
   });
+
+  describe('Display color for energy usage', function() {
+    it('is green when temperature is less than 18', function() {
+    for(var i=1; i<4; i++) {thermostat.decrease();}
+    expect(thermostat.displayColor).toBe('Green')
+    });
+
+  });
 });
