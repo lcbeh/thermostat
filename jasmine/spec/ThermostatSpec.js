@@ -37,6 +37,8 @@ describe("Thermostat", function() {
       for(var i=1; i<6; i++) {thermostat.increase();}
       expect( function() {thermostat.increase(); } ).toThrow('Power Saver mode is on, temperature cannot be more than 25');
     });
+
+
   });
 
 

@@ -1,12 +1,16 @@
 'use strict';
 
 function Thermostat() {
-  this.DEFAULT_TEMPERATURE = 20;
-  this.MINIMUM_TEMPERATURE = 10;
+  this.DEFAULT_TEMPERATURE = 20
+  this.MINIMUM_TEMPERATURE = 10
   this.temperature = this.DEFAULT_TEMPERATURE
+  this.powerSaver = true
 };
 
 Thermostat.prototype.increase = function () {
+  if (this.powerSaver == true && this.temperature == 25) {
+      throw 'Power Saver mode is on, temperature cannot be more than 25'
+  };
   this.temperature++;
 };
 
