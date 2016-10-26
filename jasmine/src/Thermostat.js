@@ -5,7 +5,6 @@ function Thermostat() {
   this.temperature = DEFAULT_TEMPERATURE
 };
 
-
 Thermostat.prototype.increase = function () {
   this.temperature++;
 };
