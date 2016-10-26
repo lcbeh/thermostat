@@ -17,6 +17,12 @@ describe("Thermostat", function() {
       thermostat.increase();
       expect(thermostat.temperature).toBe(21);
     });
+
+    it('can decrease the temperature', function() {
+      thermostat.decrease();
+      expect(thermostat.temperature).toBe(19);
+    });
+
   });
 
 });
