@@ -10,6 +10,9 @@ describe("Thermostat", function() {
     it('is 20 degrees', function() {
       expect(thermostat.temperature).toBe(20);
     });
+    it('and display color is Yellow', function() {
+      expect(thermostat.displayColor).toBe('Yellow');
+    });
   });
 
   describe('Changing Temperature', function() {
